@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.kennyc.view.MultiStateView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/state_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/github_black"
+    tools:context=".ui.main.MainActivity"
+    app:msv_errorView="@layout/error_view"
+    app:msv_emptyView="@layout/empty_view"
+    app:msv_loadingView="@layout/loading_view"
+    app:msv_viewState="loading">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_users"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_user"/>
+</com.kennyc.view.MultiStateView>

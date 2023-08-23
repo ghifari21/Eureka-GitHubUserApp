@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">GitHubUserApp</string>
+    <string name="searching">Searching…</string>
+    <string name="loading">Loading…</string>
+    <string name="name">Name</string>
+    <string name="username">Username</string>
+    <string name="location">Location</string>
+    <string name="favorite">Favorite</string>
+    <string name="share">Share</string>
+    <string name="followers">%d Followers</string>
+    <string name="following">%d Following</string>
+    <string name="company">Company</string>
+    <string name="user_information">User Information</string>
+    <string name="pub_repos">%d Public Repositories</string>
+    <string name="repository">Repository</string>
+    <string name="data_null">-</string>
+    <string name="title_followers">Followers</string>
+    <string name="title_following">Following</string>
+    <string name="onboard">Welcome to Github!</string>
+    <string name="error">Whoops! Something Went Wrong</string>
+    <string name="retry">Retry</string>
+    <string name="empty">No Result Found</string>
+    <string name="fullname_placeholder">Firstname Lastname</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="email">Email</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
