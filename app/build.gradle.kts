@@ -2,6 +2,10 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-parcelize")
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
+    id("dagger.hilt.android.plugin")
+    id("kotlin-kapt")
 }
 
 android {
@@ -81,4 +85,17 @@ dependencies {
 
     // ViewPager
     implementation("androidx.viewpager2:viewpager2:1.0.0")
+
+    // Firebase
+    implementation("com.google.firebase:firebase-crashlytics-ktx:18.4.1")
+    implementation("com.google.firebase:firebase-analytics-ktx:21.3.0")
+
+    // Dagger Hilt
+    implementation("com.google.dagger:hilt-android:2.47")
+    kapt("com.google.dagger:hilt-android-compiler:2.47")
+    kapt("androidx.hilt:hilt-compiler:1.0.0")
+}
+
+kapt {
+    correctErrorTypes = true
 }

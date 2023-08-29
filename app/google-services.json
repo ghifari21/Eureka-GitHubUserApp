@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "868244790365",
+    "project_id": "githubuserapp-991a3",
+    "storage_bucket": "githubuserapp-991a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:868244790365:android:46284cd355114042f701b4",
+        "android_client_info": {
+          "package_name": "com.gosty.githubuserapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "868244790365-mdpba90gdfpo1fbgoetierjf4unrtaid.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBECiNlE9OWq_uuU6AXl_8zQMELwXpEo20"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "868244790365-mdpba90gdfpo1fbgoetierjf4unrtaid.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -10,7 +10,7 @@
     android:layout_marginTop="4dp"
     android:layout_marginRight="8dp"
     android:layout_marginBottom="4dp"
-    android:background="?attr/colorOnSecondary"
+    android:background="@color/light_blue_gray"
     android:padding="8dp">
 
     <de.hdodenhof.circleimageview.CircleImageView

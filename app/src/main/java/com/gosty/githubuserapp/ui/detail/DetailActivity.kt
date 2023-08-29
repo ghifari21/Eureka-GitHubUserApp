@@ -1,24 +1,23 @@
 package com.gosty.githubuserapp.ui.detail
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.viewModels
 import androidx.annotation.StringRes
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.google.android.material.tabs.TabLayoutMediator
 import com.gosty.githubuserapp.R
 import com.gosty.githubuserapp.data.ui.SectionsPagerAdapter
 import com.gosty.githubuserapp.databinding.ActivityDetailBinding
-import com.gosty.githubuserapp.utils.ViewModelFactory
 import com.gosty.githubuserapp.utils.Result
 import com.kennyc.view.MultiStateView
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
-    private val viewModel: DetailViewModel by viewModels {
-        ViewModelFactory.getInstance()
-    }
+    private val viewModel: DetailViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

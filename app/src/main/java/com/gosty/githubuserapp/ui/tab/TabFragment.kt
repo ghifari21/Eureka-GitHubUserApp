@@ -2,11 +2,11 @@ package com.gosty.githubuserapp.ui.tab
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,12 +16,14 @@ import com.gosty.githubuserapp.data.ui.UserListAdapter
 import com.gosty.githubuserapp.databinding.FragmentTabBinding
 import com.gosty.githubuserapp.ui.detail.DetailActivity
 import com.gosty.githubuserapp.utils.Result
-import com.gosty.githubuserapp.utils.ViewModelFactory
 import com.kennyc.view.MultiStateView
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class TabFragment : Fragment() {
     private var _binding: FragmentTabBinding? = null
     private val binding get() = _binding
+    private val viewModel: TabViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,9 +38,6 @@ class TabFragment : Fragment() {
 
         val tabName = arguments?.getString(ARG_TAB)
         val username = arguments?.getString(ARG_USERNAME)
-        val viewModel: TabViewModel by viewModels {
-            ViewModelFactory.getInstance()
-        }
         val adapter = UserListAdapter()
 
         viewModel.getUserFollow(username!!, tabName!!).observe(viewLifecycleOwner) {

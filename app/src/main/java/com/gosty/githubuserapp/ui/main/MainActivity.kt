@@ -13,14 +13,13 @@ import com.gosty.githubuserapp.data.ui.UserListAdapter
 import com.gosty.githubuserapp.databinding.ActivityMainBinding
 import com.gosty.githubuserapp.ui.detail.DetailActivity
 import com.gosty.githubuserapp.utils.Result
-import com.gosty.githubuserapp.utils.ViewModelFactory
 import com.kennyc.view.MultiStateView
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private val viewModel: MainViewModel by viewModels {
-        ViewModelFactory.getInstance()
-    }
+    private val viewModel: MainViewModel by viewModels()
     private val adapter = UserListAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
