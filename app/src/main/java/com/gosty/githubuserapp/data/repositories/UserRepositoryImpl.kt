@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.liveData
 import androidx.lifecycle.map
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.gosty.githubuserapp.data.models.UserModel
 import com.gosty.githubuserapp.data.remote.network.ApiService
 import com.gosty.githubuserapp.utils.DataMapper
@@ -12,7 +13,8 @@ import com.gosty.githubuserapp.utils.Result
 import javax.inject.Inject
 
 class UserRepositoryImpl @Inject constructor(
-    private val apiService: ApiService
+    private val apiService: ApiService,
+    private val crashlytics: FirebaseCrashlytics
 ) : UserRepository {
     override fun getUsers(): LiveData<Result<List<UserModel>>> = liveData {
         val usersList = MutableLiveData<List<UserModel>>()
@@ -29,6 +31,7 @@ class UserRepositoryImpl @Inject constructor(
         } catch (e: Exception) {
             emit(Result.Error(e.message.toString()))
             Log.e("UserRepository", e.message.toString())
+            crashlytics.log(e.message.toString())
         }
         val data: LiveData<Result<List<UserModel>>> = usersList.map {
             Result.Success(it!!)
@@ -45,6 +48,7 @@ class UserRepositoryImpl @Inject constructor(
         } catch (e: Exception) {
             emit(Result.Error(e.message.toString()))
             Log.e("UserRepository", e.message.toString())
+            crashlytics.log(e.message.toString())
         }
         val data: LiveData<Result<UserModel>> = user.map {
             Result.Success(it!!)
@@ -67,6 +71,7 @@ class UserRepositoryImpl @Inject constructor(
         } catch (e: Exception) {
             emit(Result.Error(e.message.toString()))
             Log.e("UserRepository", e.message.toString())
+            crashlytics.log(e.message.toString())
         }
         val data: LiveData<Result<List<UserModel>>> = usersList.map {
             Result.Success(it!!)

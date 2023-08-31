@@ -62,6 +62,11 @@ class MainActivity : AppCompatActivity() {
                             }
                         }
                     )
+
+                    binding.btnError.setOnClickListener {
+                        throw RuntimeException("TEST ERROR")
+
+                    }
                 }
 
                 is Result.Empty -> {

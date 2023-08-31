@@ -1,5 +1,6 @@
 package com.gosty.githubuserapp.di
 
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.gosty.githubuserapp.BuildConfig
 import com.gosty.githubuserapp.data.remote.network.ApiService
 import com.gosty.githubuserapp.data.repositories.UserRepository
@@ -47,5 +48,9 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideUserRepository(apiService: ApiService): UserRepository = UserRepositoryImpl(apiService)
+    fun provideFirebaseCrashlytics(): FirebaseCrashlytics = FirebaseCrashlytics.getInstance()
+
+    @Singleton
+    @Provides
+    fun provideUserRepository(apiService: ApiService, crashlytics: FirebaseCrashlytics): UserRepository = UserRepositoryImpl(apiService, crashlytics)
 }
